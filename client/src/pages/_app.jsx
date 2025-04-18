@@ -1,5 +1,6 @@
 // src/pages/_app.jsx
-import '../styles/globals.css'; // Adjust if you have CSS
+import '../styles/globals.css';
+import '../styles/scrabble.css';
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;

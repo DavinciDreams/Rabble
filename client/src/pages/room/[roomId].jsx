@@ -4,7 +4,6 @@ import io from 'socket.io-client';
 import Head from 'next/head';
 import PlayerList from '../../components/PlayerList';
 import ScrabbleGame from '../../components/ScrabbleGame';
-import '../../styles/scrabble.css';
 
 const socket = io('https://acrophylia.onrender.com', {
   withCredentials: true,
