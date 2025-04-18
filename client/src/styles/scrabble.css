@@ -1,0 +1,158 @@
+.scrabble-board {
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+    gap: 2px;
+    background-color: #8B4513;
+    border: 5px solid #8B4513;
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 1;
+    margin: 0 auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tile {
+    background-color: #FFF8DC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #333;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    position: relative;
+    padding: 2px;
+}
+
+.tile:hover:not(.placed) {
+    transform: scale(1.05);
+    background-color: #FFFACD;
+}
+
+.tile.placed {
+    background-color: #FFF8DC;
+    cursor: default;
+}
+
+.tile-letter {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #000;
+}
+
+.tile-score {
+    font-size: 0.7em;
+    color: #555;
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+}
+
+.triple-word {
+    background-color: #FF4500;
+    color: white;
+}
+
+.double-word {
+    background-color: #FFB6C1;
+}
+
+.triple-letter {
+    background-color: #00B7EB;
+}
+
+.double-letter {
+    background-color: #87CEEB;
+}
+
+.player-tiles {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 10px;
+    max-width: 600px;
+    flex-wrap: wrap;
+    margin: 20px auto;
+}
+
+.player-tile {
+    background-color: #FFF8DC;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: 2px solid #8B4513;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    position: relative;
+}
+
+.player-tile:hover {
+    transform: scale(1.1);
+}
+
+.player-tile.selected {
+    border-color: #FFD700;
+    transform: scale(1.1);
+}
+
+.scrabble-controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.scrabble-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #8B4513;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.scrabble-button:hover {
+    background-color: #A0522D;
+}
+
+.scrabble-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.error-message {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 12px 20px;
+    border: 2px solid #ef5350;
+    border-radius: 4px;
+    margin: 10px 0;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.9em;
+    text-align: center;
+    animation: fadeIn 0.3s ease-in;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, -10px); }
+    to { opacity: 1; transform: translate(-50%, 0); }
+}

@@ -1,0 +1,35 @@
+// Common Scrabble-legal words
+module.exports = [
+  // 2-letter words
+  'aa', 'ab', 'ad', 'ae', 'ag', 'ah', 'ai', 'al', 'am', 'an', 'ar', 'as', 'at', 'aw', 'ax', 'ay',
+  'ba', 'be', 'bi', 'bo', 'by',
+  'da', 'de', 'do',
+  'ed', 'ef', 'eh', 'el', 'em', 'en', 'er', 'es', 'et', 'ex',
+  'fa', 'fe', 'fy',
+  'gi', 'go',
+  'ha', 'he', 'hi', 'hm', 'ho',
+  'id', 'if', 'in', 'is', 'it',
+  'jo',
+  'ka', 'ki',
+  'la', 'li', 'lo',
+  'ma', 'me', 'mi', 'mm', 'mo', 'mu', 'my',
+  'na', 'ne', 'no', 'nu', 'ny',
+  'ob', 'od', 'oe', 'of', 'oh', 'oi', 'om', 'on', 'op', 'or', 'os', 'ow', 'ox', 'oy',
+  'pa', 'pe', 'pi', 'po',
+  'qi',
+  're',
+  'sh', 'si', 'so',
+  'ta', 'te', 'ti', 'to',
+  'uh', 'um', 'un', 'up', 'us', 'ut',
+  'we', 'wo',
+  'xi',
+  'xu',
+  'ya', 'ye', 'yo',
+  'za',
+  // Common 3-5 letter words
+  'the', 'and', 'for', 'are', 'but', 'not', 'you', 'all', 'any', 'can', 'had', 'her', 'was', 'one',
+  'our', 'out', 'day', 'get', 'has', 'him', 'his', 'how', 'man', 'new', 'now', 'old', 'see', 'two',
+  'way', 'who', 'boy', 'did', 'its', 'let', 'put', 'say', 'she', 'too', 'use', 'that', 'with', 'have',
+  'this', 'will', 'your', 'from', 'they', 'know', 'want', 'been', 'good', 'much', 'some', 'time',
+  // Additional common words can be added here
+];

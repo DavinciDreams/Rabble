@@ -7,8 +7,17 @@ export function SocketProvider({ children }) {
   const [socket, setSocket] = useState(null)
 
   useEffect(() => {
-    const serverUrl = 'https://acrophylia.onrender.com'  // Replace with your Render URL
-    const newSocket = io(serverUrl)
+    const serverUrl = process.env.NODE_ENV === 'development' 
+      ? 'http://localhost:3001'  // Local development server
+      : 'https://acrophylia.onrender.com'  // Production server
+    const newSocket = io(serverUrl, {
+      withCredentials: true,
+      transports: ['polling', 'websocket'],
+      reconnection: true,
+      reconnectionAttempts: 15,
+      reconnectionDelay: 1000,
+      timeout: 30000,
+    })
     setSocket(newSocket)
     
     newSocket.on('connect', () => console.log('Socket connected'))
