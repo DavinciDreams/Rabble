@@ -1,16 +1,16 @@
-// server/server.js
+// server/index.js
 const http = require('http');
 const { Server } = require('socket.io');
 
 const server = http.createServer();
 const io = new Server(server, {
   cors: {
-    origin: ['*', 'https://rabble-nine.vercel.app/'], // Replace with your Vercel URL in production (e.g., https://your-vercel-url)
+    origin: 'https://rabble-nine.vercel.app/', // Replace with Vercel URL in production
     methods: ['GET', 'POST'],
   },
 });
 
-// In-memory game state (replace with database like MongoDB for production)
+// In-memory game state (replace with database for production)
 const games = new Map();
 
 const getGameState = (roomId) => {
@@ -181,7 +181,7 @@ io.on('connection', (socket) => {
 
   socket.on('disconnect', () => {
     console.log('Client disconnected:', socket.id);
-    // Clean up game state
+    // Clean up game state if needed
     for (const [roomId, gameState] of games) {
       if (gameState.playerTiles[socket.id]) {
         delete gameState.playerTiles[socket.id];

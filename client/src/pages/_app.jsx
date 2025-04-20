@@ -1,8 +1,11 @@
-// src/pages/_app.jsx
-import '../styles/globals.css'; // Adjust if you have CSS
+// pages/_app.jsx
+import { GameProvider } from '../context/GameContext';
+import '../styles/globals.css';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+export default function App({ Component, pageProps }) {
+  return (
+    <GameProvider>
+      <Component {...pageProps} />
+    </GameProvider>
+  );
 }
-
-export default MyApp;
